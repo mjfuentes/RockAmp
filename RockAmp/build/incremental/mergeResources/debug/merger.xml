@@ -4,6 +4,36 @@
     <dataSet config="main" >
         <source path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res" >
             <file
+                name="albums"
+                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\drawable\albums.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="artists"
+                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\drawable\artists.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="disc"
+                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\drawable\disc.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="icon"
+                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\drawable\icon.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="play"
+                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\drawable\play.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="tracks"
+                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\drawable\tracks.png"
+                qualifiers=""
+                type="drawable" />
+            <file
                 name="ic_launcher"
                 path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\drawable-hdpi\ic_launcher.png"
                 qualifiers="hdpi"
@@ -24,8 +54,43 @@
                 qualifiers="xxhdpi"
                 type="drawable" />
             <file
+                name="activity_albums"
+                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\layout\activity_albums.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_artists"
+                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\layout\activity_artists.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="activity_main"
                 path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\layout\activity_main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_nowplaying"
+                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\layout\activity_nowplaying.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_songs"
+                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\layout\activity_songs.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="album_layout"
+                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\layout\album_layout.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="gridviewitem"
+                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\layout\gridviewitem.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="now_playing_bar"
+                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\layout\now_playing_bar.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -104,66 +169,6 @@
                     <!-- API 14 theme customizations can go here. -->
                 </style>
             </file>
-            <file
-                name="artists"
-                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\drawable\artists.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="album_layout"
-                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\layout\album_layout.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="gridviewitem"
-                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\layout\gridviewitem.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="activity_songs"
-                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\layout\activity_songs.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="disc"
-                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\drawable\disc.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="icon"
-                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\drawable\icon.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="albums"
-                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\drawable\albums.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="tracks"
-                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\drawable\tracks.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="activity_albums"
-                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\layout\activity_albums.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="play"
-                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\drawable\play.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="activity_nowplaying"
-                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\layout\activity_nowplaying.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="activity_artists"
-                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\layout\activity_artists.xml"
-                qualifiers=""
-                type="layout" />
         </source>
         <source path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\build\res\rs\debug" />
     </dataSet>

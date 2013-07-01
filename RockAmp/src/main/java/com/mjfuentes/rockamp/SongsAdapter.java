@@ -1,5 +1,6 @@
 package com.mjfuentes.rockamp;
 
+import android.content.ContentUris;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
@@ -76,10 +77,13 @@ public class SongsAdapter extends BaseAdapter{
                                 .getColumnIndex(MediaStore.Audio.Media.DATA));
 
 
+
                         temp.album_name = cursor.getString(cursor
                                 .getColumnIndex(MediaStore.Audio.Media.ALBUM));
                         temp.album_id = cursor.getInt(cursor
                                 .getColumnIndex(MediaStore.Audio.Media.ALBUM_ID));
+                        Uri sArtworkUri = Uri.parse("content://media/external/audio/albumart");
+                        temp.image_uri = ContentUris.withAppendedId(sArtworkUri, temp.album_id);
 
                         temp.artist_name = cursor.getString(cursor
                                 .getColumnIndex(MediaStore.Audio.Media.ARTIST));

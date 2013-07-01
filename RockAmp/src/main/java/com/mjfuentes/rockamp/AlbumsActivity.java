@@ -2,20 +2,27 @@ package com.mjfuentes.rockamp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.io.IOException;
 
 /**
  * Created by Matias_2 on 06/06/13.
  */
-public class AlbumsActivity extends Activity {
+public class AlbumsActivity extends PlayerActivity {
     AlbumsAdapter adapter;
     String artist;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_albums);
+        loadButtons();
         Intent intent = getIntent();
         int aux = intent.getIntExtra("art", 0);
         if (aux!=0)
@@ -38,4 +45,6 @@ public class AlbumsActivity extends Activity {
             }
         });
     }
+
+
 }

@@ -15,6 +15,8 @@
         <activity android:configChanges="keyboardHidden|orientation" android:label="Albums" android:name="com.mjfuentes.rockamp.AlbumsActivity"/>
         <activity android:configChanges="keyboardHidden|orientation" android:label="Songs" android:name="com.mjfuentes.rockamp.SongsActivity"/>
         <activity android:configChanges="keyboardHidden|orientation" android:label="Now Playing" android:name="com.mjfuentes.rockamp.PlayActivity"/>
+        <activity android:name="com.mjfuentes.rockamp.PlayerActivity"/>
+
         <service android:icon="@drawable/icon" android:label="MusicService" android:name="com.mjfuentes.rockamp.MusicService">
         </service>
     </application>

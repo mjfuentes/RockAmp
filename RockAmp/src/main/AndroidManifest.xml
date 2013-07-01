@@ -39,6 +39,8 @@
                 android:name=".PlayActivity"
                 android:label="Now Playing"
                 android:configChanges="keyboardHidden|orientation"/>
+        <activity android:name=".PlayerActivity"/>
+
         <service
                 android:name=".MusicService"
                 android:icon="@drawable/icon"

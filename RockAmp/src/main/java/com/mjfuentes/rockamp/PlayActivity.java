@@ -1,8 +1,11 @@
 package com.mjfuentes.rockamp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.graphics.Bitmap;
@@ -11,6 +14,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -45,7 +49,7 @@ public class PlayActivity extends Activity {
         public void onServiceConnected(ComponentName name, IBinder service) {
             MusicService.MusicBinder binder = (MusicService.MusicBinder) service;
             mService = binder.getService();
-            serviceController.setMusicService(mService);
+            MusicController.setMusicService(mService);
             mService.StartPlaying(artistId,albumId,songId,allSongs);
             updateData();
             mBound = true;
@@ -69,16 +73,16 @@ public class PlayActivity extends Activity {
         allSongs = i.getBooleanExtra("all",false);
         configureButtons();
 
-        if ((serviceController.getMusicService()==null) && (artistId != 0))
+        if ((MusicController.getMusicService()==null) && (artistId != 0))
         {
             Intent intent  = new Intent(this,MusicService.class);
             bindService(intent,mConnection, Context.BIND_AUTO_CREATE);
         }
-        else if (serviceController.getMusicService()!=null)
+        else if (MusicController.getMusicService()!=null)
         {
             if (artistId!=0)
             {
-                mService = serviceController.getMusicService();
+                mService = MusicController.getMusicService();
                 mService.StartPlaying(artistId,albumId,songId,allSongs);
                 updateData();
                 mBound = true;
@@ -86,8 +90,9 @@ public class PlayActivity extends Activity {
             }
             else
             {
-                mService = serviceController.getMusicService();
+                mService = MusicController.getMusicService();
                 updateData();
+                playing = true;
             }
         }
     }
@@ -113,16 +118,34 @@ public class PlayActivity extends Activity {
     }
     }
 
-/*    public boolean onKeyDown(int keycode, KeyEvent e) {
+    public boolean onKeyDown(int keycode, KeyEvent e) {
         switch(keycode) {
-            case KeyEvent.KEYCODE_BACK:
-                player.release();
-                super.onBackPressed();
+            case KeyEvent.KEYCODE_MENU:
+                AlertDialog.Builder builder = new AlertDialog.Builder(PlayActivity.this);
+                builder.setItems(new CharSequence[]{"PlayList","Options"},new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (which == 0)
+                        {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(PlayActivity.this);
+                            builder.setItems(updatedInfo.playList,new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    //this.playSong(which);
+                                }
+                            });
+                            Dialog playlist = builder.create();
+                            playlist.show();
+                        }
+                    }
+                });
+                Dialog options = builder.create();
+                options.show();
                 return true;
         }
 
         return super.onKeyDown(keycode, e);
-    }*/
+    }
 
     public void configureButtons()
     {
@@ -135,7 +158,7 @@ public class PlayActivity extends Activity {
                     mService.pause();
                     playing = false;
                 }
-                else { mService.start();
+                else { mService.play();
                     playing = true;}
             }
         });

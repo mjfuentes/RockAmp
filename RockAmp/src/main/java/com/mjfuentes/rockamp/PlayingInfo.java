@@ -12,4 +12,5 @@ public class PlayingInfo {
     public int total;
     public int index;
     public Uri image;
+    public String[] playList;
 }

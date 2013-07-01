@@ -14,5 +14,8 @@
             android:verticalSpacing="5dp"
             android:paddingLeft="4dp"
             android:paddingTop="4dp"
-            android:paddingRight="4dp"/>
+            android:paddingRight="4dp"
+            android:layout_above="@+id/relativeLayout"/>
+    <include layout="@layout/now_playing_bar"/>
+
 </RelativeLayout>

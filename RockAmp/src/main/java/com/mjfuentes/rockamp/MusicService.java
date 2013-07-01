@@ -25,10 +25,12 @@ public class MusicService extends Service {
     private int songId;
     private MusicItem song;
     private MusicItem[] playList;
+    private String[] playListNames;
     private int albumId;
     private int artistId;
     private MediaPlayer player;
     private final IBinder mBinder = new MusicBinder();
+    private boolean playing;
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -59,6 +61,7 @@ public class MusicService extends Service {
         allSongs = all;
         loadPlaylist();
         playSong();
+        playing = true;
     }
 
     @Override
@@ -69,6 +72,7 @@ public class MusicService extends Service {
 
     public void loadPlaylist()
     {
+        ArrayList<String> songNames = new ArrayList<String>();
         ArrayList<MusicItem> items = new ArrayList<MusicItem>();
         String[] STAR = { "*" };
         Uri allsongsuri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
@@ -107,12 +111,19 @@ public class MusicService extends Service {
                         if ((temp.album_id == albumId) && (temp.artist_id == artistId)){
 
                             items.add(temp);
+                            songNames.add(temp.artist_name + " - " + temp.song_name);
                         }
                     }
-                    else items.add(temp);
-                    if (temp.song_id == songId)
+                    else
+                    {
+
+                        items.add(temp);
+                        songNames.add(temp.artist_name + " - " + temp.song_name);
+                    }
+                        if (temp.song_id == songId)
                     {
                         song = temp;
+
                     }
 
 
@@ -122,6 +133,7 @@ public class MusicService extends Service {
             cursor.close();
             songIndex = items.indexOf(song);
             playList = items.toArray(new MusicItem[items.size()]);
+            playListNames = songNames.toArray(new String[songNames.size()]);
         }
     }
 
@@ -135,12 +147,11 @@ public class MusicService extends Service {
 
     public void pause()
     {
-        player.pause();
-    }
-
-    public void start()
-    {
-        player.start();
+        if (playing)
+        {
+            player.pause();
+            playing = false;
+        }
     }
 
     public void previousSong()
@@ -179,6 +190,7 @@ public class MusicService extends Service {
         info.index = songIndex;
         info.total = playList.length;
         info.image = song.image_uri;
+        info.playList = playListNames;
         return info;
     }
 
@@ -187,6 +199,28 @@ public class MusicService extends Service {
         MusicService getService()
         {
             return MusicService.this;
+        }
+    }
+
+    public void addSong(MusicItem item)
+    {
+        MusicItem[] newArray = new MusicItem[playList.length + 1];
+        System.arraycopy(playList,0,newArray,0,playList.length);
+        newArray[newArray.length-1] = item;
+        playList = newArray;
+    }
+
+    public boolean isPlaying()
+    {
+        return playing;
+    }
+
+    public void play()
+    {
+        if (playing == false)
+        {
+            player.start();
+            playing= true;
         }
     }
 

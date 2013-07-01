@@ -11,6 +11,9 @@
             android:choiceMode="none"
             android:layout_centerHorizontal="true"
             android:dividerHeight="4dp"
-            android:layout_alignParentTop="true"/>
+            android:layout_alignParentTop="true"
+            android:layout_above="@+id/relativeLayout"/>
+    <include layout="@layout/now_playing_bar"/>
+
 
 </RelativeLayout>
