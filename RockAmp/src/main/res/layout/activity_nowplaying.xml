@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="350dp"
+            android:id="@+id/imageView"
+            android:src="@drawable/disc"
+            android:scaleType="fitCenter"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_above="@+id/next"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="35dp"/>
+
+    <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:indeterminate="false"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/artist"
+            android:layout_above="@+id/song"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="No media loaded"
+            android:id="@+id/song"
+            android:layout_above="@+id/imageView"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:maxLength="35"
+            android:lines="1"
+            android:linksClickable="false"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:id="@+id/next"
+            android:layout_alignTop="@+id/button3"
+            android:layout_toRightOf="@+id/button3"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last"
+            android:id="@+id/last"
+            android:layout_alignTop="@+id/button3"
+            android:layout_toLeftOf="@+id/button3"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play/Pause"
+            android:id="@+id/button3"
+            android:layout_above="@+id/progressBar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/index"
+            android:layout_below="@+id/artist"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"/>
+
+</RelativeLayout>
