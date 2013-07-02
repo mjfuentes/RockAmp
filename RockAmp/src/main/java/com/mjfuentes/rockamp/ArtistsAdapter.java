@@ -47,7 +47,7 @@ public class ArtistsAdapter extends BaseAdapter{
         TextView tv =  new TextView(context);
         tv.setText(values[position].name);
         tv.setTextSize(20);
-        tv.setPadding(0,8,0,8);
+        tv.setPadding(5,8,0,8);
         tv.setSingleLine(true);
         return tv;
     }

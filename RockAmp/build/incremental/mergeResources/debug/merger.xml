@@ -169,6 +169,21 @@
                     <!-- API 14 theme customizations can go here. -->
                 </style>
             </file>
+            <file
+                name="generic_album_micro"
+                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\drawable\generic_album_micro.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="generic_album"
+                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\drawable\generic_album.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="generic_album_mini"
+                path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\src\main\res\drawable\generic_album_mini.png"
+                qualifiers=""
+                type="drawable" />
         </source>
         <source path="C:\Users\Matias_2\Documents\AndroidProjects\RockAmpProject\RockAmp\build\res\rs\debug" />
     </dataSet>

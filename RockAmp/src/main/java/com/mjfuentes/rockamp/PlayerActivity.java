@@ -1,12 +1,14 @@
 package com.mjfuentes.rockamp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -23,7 +25,7 @@ public class PlayerActivity extends Activity {
     @Override
     protected void onResume() {
        updateData();
-        super.onResume();
+       super.onResume();
 
     }
 
@@ -31,7 +33,7 @@ public class PlayerActivity extends Activity {
     {
         TextView artistName = (TextView) findViewById(R.id.artistName);
         TextView songName = (TextView) findViewById(R.id.songName);
-        ImageView albumImage = (ImageView) findViewById(R.id.imageView);
+        ImageView albumImage = (ImageView) findViewById(R.id.albumCover);
         PlayingInfo info = MusicController.getCurrentData();
         if (info!=null)
         {
@@ -42,13 +44,14 @@ public class PlayerActivity extends Activity {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), info.image);
                 if (bitmap != null)
                 {
-                    Bitmap img =  Bitmap.createScaledBitmap(bitmap,50,50,true);
+                    Bitmap img =  Bitmap.createScaledBitmap(bitmap,80,80,true);
                     bitmap.recycle();
                     albumImage.setImageBitmap(img);
                 }
-                else albumImage.setImageResource(R.drawable.disc);
+                else albumImage.setImageResource(R.drawable.generic_album_micro);
             } catch (IOException e) {
                 e.printStackTrace();
+                albumImage.setImageResource(R.drawable.generic_album_micro);
             }
         }
     }
@@ -64,9 +67,11 @@ public class PlayerActivity extends Activity {
                 if (MusicController.isPlaying())
                 {
                     MusicController.pause();
+                    updateData();
                 }
                 else {
                     MusicController.play();
+                    updateData();
                 }
             }
         });
@@ -74,7 +79,7 @@ public class PlayerActivity extends Activity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MusicController.next();
+                MusicController.next(); updateData();
             }
 
         });
@@ -82,7 +87,16 @@ public class PlayerActivity extends Activity {
         previous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MusicController.previous();
+                MusicController.previous(); updateData();
+            }
+        });
+
+        RelativeLayout bar = (RelativeLayout)findViewById(R.id.bar);
+        bar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PlayerActivity.this,PlayActivity.class);
+                startActivity(i);
             }
         });
     }

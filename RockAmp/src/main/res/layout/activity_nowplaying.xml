@@ -8,7 +8,7 @@
             android:layout_width="fill_parent"
             android:layout_height="350dp"
             android:id="@+id/imageView"
-            android:src="@drawable/disc"
+            android:src="@drawable/generic_album"
             android:scaleType="fitCenter"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
@@ -60,7 +60,7 @@
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Last"
+            android:text="Previous"
             android:id="@+id/last"
             android:layout_alignTop="@+id/button3"
             android:layout_toLeftOf="@+id/button3"/>
@@ -68,7 +68,7 @@
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Play/Pause"
+            android:text="Play"
             android:id="@+id/button3"
             android:layout_above="@+id/progressBar"
             android:layout_centerHorizontal="true"
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/index"
-            android:layout_below="@+id/artist"
+            android:layout_alignTop="@+id/artist"
             android:layout_alignParentRight="true"
             android:layout_marginRight="5dp"/>
 

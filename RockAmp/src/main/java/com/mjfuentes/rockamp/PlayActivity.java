@@ -87,12 +87,16 @@ public class PlayActivity extends Activity {
                 updateData();
                 mBound = true;
                 playing = true;
+                final Button play = (Button) findViewById(R.id.button3);
+                play.setText("Pause");
             }
             else
             {
                 mService = MusicController.getMusicService();
                 updateData();
                 playing = true;
+                final Button play = (Button) findViewById(R.id.button3);
+                play.setText("Pause");
             }
         }
     }
@@ -149,7 +153,7 @@ public class PlayActivity extends Activity {
 
     public void configureButtons()
     {
-        Button play = (Button) findViewById(R.id.button3);
+        final Button play = (Button) findViewById(R.id.button3);
         play.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -157,9 +161,11 @@ public class PlayActivity extends Activity {
                 {
                     mService.pause();
                     playing = false;
+                    play.setText("Play");
                 }
                 else { mService.play();
-                    playing = true;}
+                    playing = true;
+                play.setText("Pause");}
             }
         });
 

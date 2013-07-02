@@ -49,7 +49,7 @@ public class SongsAdapter extends BaseAdapter{
         TextView tv =  new TextView(context);
         tv.setText(values[position].artist_name + " - " + values[position].song_name);
         tv.setTextSize(20);
-        tv.setPadding(0,8,0,8);
+        tv.setPadding(5,8,0,8);
         tv.setSingleLine(true);
         return tv;
     }

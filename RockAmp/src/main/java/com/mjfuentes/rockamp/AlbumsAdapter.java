@@ -66,13 +66,16 @@ public class AlbumsAdapter extends BaseAdapter{
             bitmap.recycle();
             iv.setImageBitmap(img);
             }
-            else iv.setImageResource(R.drawable.disc);
+            else
+            {
+                iv.setImageResource(R.drawable.generic_album_mini);
+            }
 
         }
         catch (Exception e)
         {
             //No image for album
-            iv.setImageResource(R.drawable.disc);
+            iv.setImageResource(R.drawable.generic_album_mini);
         }
         TextView tv = (TextView) rv.findViewById(R.id.textView);
         tv.setText(values[position].name);

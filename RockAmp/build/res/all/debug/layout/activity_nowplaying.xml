@@ -8,7 +8,7 @@
             android:layout_width="fill_parent"
             android:layout_height="350dp"
             android:id="@+id/imageView"
-            android:src="@drawable/disc"
+            android:src="@drawable/generic_album"
             android:scaleType="fitCenter"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/index"
-            android:layout_below="@+id/artist"
+            android:layout_alignTop="@+id/artist"
             android:layout_alignParentRight="true"
             android:layout_marginRight="5dp"/>
 

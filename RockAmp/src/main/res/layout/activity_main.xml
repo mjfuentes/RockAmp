@@ -15,6 +15,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"/>
 
-    <include layout="@layout/now_playing_bar"/>
+    <include layout="@layout/now_playing_bar"
+             android:id="@+id/bar"/>
 
 </RelativeLayout>

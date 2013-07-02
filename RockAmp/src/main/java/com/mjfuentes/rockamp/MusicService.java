@@ -60,8 +60,8 @@ public class MusicService extends Service {
         songId = soId;
         allSongs = all;
         loadPlaylist();
-        playSong();
         playing = true;
+        playSong();
     }
 
     @Override
@@ -178,7 +178,11 @@ public class MusicService extends Service {
             else player = new MediaPlayer();
             player.setDataSource(getApplicationContext(),newUri);
             player.prepare();
-            player.start();
+            if (playing)
+            {
+                player.start();
+                playing = true;
+            }
         }
         catch (IOException e) {
             e.printStackTrace();

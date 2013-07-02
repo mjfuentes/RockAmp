@@ -2,41 +2,43 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:id="@+id/relativeLayout"
-            android:background="#a6a3a7"
+            android:layout_height="70dp"
+            android:id="@+id/playing_bar"
+            android:background="#f0edf1"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true">
+            android:layout_alignParentRight="true"
+            android:clickable="true">
         <ImageView
-                android:layout_width="50dp"
+                android:layout_width="60dp"
                 android:layout_height="fill_parent"
                 android:id="@+id/albumCover"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:src="@drawable/disc"
-                android:layout_marginLeft="5dp"
-                />
+                android:layout_margin="5dp"/>
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="song name"
                 android:id="@+id/songName"
-                android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/albumCover"
-                android:layout_marginTop="7dp"
-                android:layout_marginLeft="5dp"/>
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:layout_alignTop="@+id/previous_song"
+                android:layout_alignLeft="@+id/artistName"
+                android:layout_toLeftOf="@+id/previous_song"/>
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="artist name"
                 android:id="@+id/artistName"
                 android:layout_below="@+id/songName"
                 android:layout_toRightOf="@+id/albumCover"
-                android:layout_marginLeft="5dp"/>
+                android:layout_marginLeft="5dp"
+                android:layout_toLeftOf="@+id/previous_song"
+                android:ellipsize="marquee"
+                android:singleLine="true"/>
 
     <Button
             style="?android:attr/buttonStyleSmall"
