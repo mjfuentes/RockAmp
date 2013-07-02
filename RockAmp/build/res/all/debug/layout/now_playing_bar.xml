@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:id="@+id/relativeLayout"
+            android:background="#a6a3a7"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true">
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="fill_parent"
+                android:id="@+id/albumCover"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/disc"
+                android:layout_marginLeft="5dp"
+                />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="song name"
+                android:id="@+id/songName"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/albumCover"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="5dp"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="artist name"
+                android:id="@+id/artistName"
+                android:layout_below="@+id/songName"
+                android:layout_toRightOf="@+id/albumCover"
+                android:layout_marginLeft="5dp"/>
+
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:text="New Button"
+            android:id="@+id/next_song"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="23dp"/>
+
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:text="New Button"
+            android:id="@+id/play_pause"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/next_song"/>
+
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/previous_song"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/play_pause"/>
+</RelativeLayout>
