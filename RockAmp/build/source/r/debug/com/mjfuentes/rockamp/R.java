@@ -27,11 +27,11 @@ public final class R {
         public static final int tracks=0x7f020009;
     }
     public static final class id {
-        public static final int action_settings=0x7f080015;
-        public static final int albumCover=0x7f08000f;
+        public static final int action_settings=0x7f080017;
+        public static final int albumCover=0x7f080011;
         public static final int albumsGridView=0x7f080000;
         public static final int artist=0x7f080007;
-        public static final int artistName=0x7f080012;
+        public static final int artistName=0x7f080013;
         public static final int bar=0x7f080001;
         public static final int button3=0x7f080009;
         public static final int gridView=0x7f080003;
@@ -40,15 +40,17 @@ public final class R {
         public static final int last=0x7f08000a;
         public static final int listView=0x7f080002;
         public static final int next=0x7f080005;
-        public static final int next_song=0x7f080013;
-        public static final int play_pause=0x7f080014;
-        public static final int playing_bar=0x7f08000e;
-        public static final int previous_song=0x7f080011;
+        public static final int next_song=0x7f080014;
+        public static final int play_pause=0x7f080015;
+        public static final int playing_bar=0x7f080010;
+        public static final int position=0x7f08000c;
+        public static final int previous_song=0x7f080016;
         public static final int progressBar=0x7f080006;
         public static final int song=0x7f080008;
-        public static final int songName=0x7f080010;
-        public static final int songslistView=0x7f08000c;
-        public static final int textView=0x7f08000d;
+        public static final int songName=0x7f080012;
+        public static final int songslistView=0x7f08000e;
+        public static final int textView=0x7f08000f;
+        public static final int total=0x7f08000d;
     }
     public static final class layout {
         public static final int activity_albums=0x7f030000;

@@ -3,6 +3,7 @@ package com.mjfuentes.rockamp;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -99,5 +100,19 @@ public class PlayerActivity extends Activity {
                 startActivity(i);
             }
         });
+    }
+}
+
+class ProgressTask extends AsyncTask
+{
+
+    @Override
+    protected Object doInBackground(Object[] params) {
+        return null;
+    }
+
+    @Override
+    protected void onProgressUpdate(Object[] values) {
+        super.onProgressUpdate(values);
     }
 }

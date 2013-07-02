@@ -5,6 +5,7 @@ package com.mjfuentes.rockamp;
  */
 public class MusicController {
     private static MusicService instance;
+    private static PlayActivity activity;
     public static MusicService getMusicService()
     {
         if (instance != null)
@@ -87,6 +88,42 @@ public class MusicController {
         if (instance != null)
         {
             instance.previousSong();
+        }
+    }
+
+    public static int getPosition()
+    {
+        if (instance != null)
+        {
+            return instance.player.getCurrentPosition();
+        }
+        return 0;
+    }
+
+    public static void setActivity(PlayActivity act)
+    {
+        activity = act;
+    }
+
+    public static PlayActivity getActivity()
+    {
+        return activity;
+    }
+
+    public static int getDuration()
+    {
+        if (instance !=null)
+        {
+            return instance.player.getDuration();
+        }
+        return 0;
+    }
+
+    public static void getPosition(int pos)
+    {
+        if (instance != null)
+        {
+            instance.player.seekTo(pos);
         }
     }
 }

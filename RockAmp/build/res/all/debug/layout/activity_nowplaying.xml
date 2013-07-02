@@ -23,7 +23,9 @@
             android:id="@+id/progressBar"
             android:indeterminate="false"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"/>
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
 
     <TextView
             android:layout_width="wrap_content"
@@ -60,7 +62,7 @@
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Last"
+            android:text="Previous"
             android:id="@+id/last"
             android:layout_alignTop="@+id/button3"
             android:layout_toLeftOf="@+id/button3"/>
@@ -68,7 +70,7 @@
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Play/Pause"
+            android:text="Play"
             android:id="@+id/button3"
             android:layout_above="@+id/progressBar"
             android:layout_centerHorizontal="true"
@@ -82,5 +84,22 @@
             android:layout_alignTop="@+id/artist"
             android:layout_alignParentRight="true"
             android:layout_marginRight="5dp"/>
+
+    <TextView
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:id="@+id/position"
+            android:layout_above="@+id/progressBar"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:text="0:00"/>
+
+    <TextView
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:id="@+id/total"
+            android:layout_above="@+id/progressBar"
+            android:layout_alignRight="@+id/index"
+            android:text="0:00"/>
 
 </RelativeLayout>

@@ -28,7 +28,7 @@ public class MusicService extends Service {
     private String[] playListNames;
     private int albumId;
     private int artistId;
-    private MediaPlayer player;
+    public MediaPlayer player;
     private final IBinder mBinder = new MusicBinder();
     private boolean playing;
 
@@ -186,7 +186,7 @@ public class MusicService extends Service {
         }
         catch (IOException e) {
             e.printStackTrace();
-        }
+        } 
     }
 
     public PlayingInfo getData()

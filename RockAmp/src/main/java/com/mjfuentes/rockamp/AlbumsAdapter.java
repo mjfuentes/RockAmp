@@ -14,6 +14,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +28,6 @@ public class AlbumsAdapter extends BaseAdapter{
     private Item[] values;
     private int auxData;
     private List<MusicItem> items;
-
     public AlbumsAdapter(Context ctx, String option, int aux)
     {
         context = ctx;
@@ -59,7 +61,10 @@ public class AlbumsAdapter extends BaseAdapter{
         ImageView iv = (ImageView) rv.findViewById(R.id.imageView);
 
         try {
-            Bitmap bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), values[position].image);
+            DisplayImageOptions options = new DisplayImageOptions.Builder().showImageOnFail(R.drawable.generic_album).build();
+            ImageLoader imageLoader = ImageLoader.getInstance();
+            imageLoader.displayImage(values[position].image.toString(),iv,options);
+            /*Bitmap bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), values[position].image);
             if (bitmap != null)
             {
             Bitmap img =  Bitmap.createScaledBitmap(bitmap,160,160,true);
@@ -69,7 +74,7 @@ public class AlbumsAdapter extends BaseAdapter{
             else
             {
                 iv.setImageResource(R.drawable.generic_album_mini);
-            }
+            }*/
 
         }
         catch (Exception e)

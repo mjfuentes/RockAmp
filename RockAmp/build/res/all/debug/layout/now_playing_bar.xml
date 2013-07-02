@@ -14,55 +14,54 @@
                 android:id="@+id/albumCover"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
-                android:src="@drawable/disc"
+                android:src="@drawable/generic_album_micro"
                 android:layout_margin="5dp"/>
 
         <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:id="@+id/songName"
                 android:singleLine="true"
                 android:ellipsize="marquee"
-                android:layout_alignTop="@+id/previous_song"
-                android:layout_alignLeft="@+id/artistName"
-                android:layout_toLeftOf="@+id/previous_song"/>
+                android:layout_toRightOf="@+id/albumCover"
+                android:layout_marginTop="18dp"
+                android:layout_marginLeft="10dp"/>
 
         <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:id="@+id/artistName"
+                android:ellipsize="marquee"
+                android:singleLine="true"
                 android:layout_below="@+id/songName"
                 android:layout_toRightOf="@+id/albumCover"
-                android:layout_marginLeft="5dp"
-                android:layout_toLeftOf="@+id/previous_song"
-                android:ellipsize="marquee"
-                android:singleLine="true"/>
+                android:layout_alignRight="@+id/songName"
+                android:layout_marginLeft="10dp"/>
 
     <Button
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:text="New Button"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:id="@+id/next_song"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="23dp"/>
+            />
 
     <Button
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:text="New Button"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:id="@+id/play_pause"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/next_song"/>
+            android:layout_toLeftOf="@+id/next_song"
+            android:layout_marginLeft="5dp"/>
 
     <Button
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:id="@+id/previous_song"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/play_pause"/>

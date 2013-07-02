@@ -5,6 +5,7 @@
     android:versionName="1.0" >
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="16" />
@@ -13,7 +14,8 @@
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Holo.Light">
+        android:theme="@android:style/Theme.Holo.Light"
+        android:name=".MusicApplication">
         <activity
             android:name="com.mjfuentes.rockamp.MainActivity"
             android:label="@string/app_name" >
