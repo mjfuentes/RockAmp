@@ -140,9 +140,11 @@ public class MusicService extends Service {
 
     public void nextSong()
     {
+        if (songIndex < playList.length-1){
         songIndex++;
         player.stop();
         playSong();
+        }
     }
 
     public void pause()
@@ -156,9 +158,11 @@ public class MusicService extends Service {
 
     public void previousSong()
     {
+        if (songIndex>0){
         songIndex--;
         player.stop();
         playSong();
+        }
     }
 
     public void playSong()
